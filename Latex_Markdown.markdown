@@ -1,4 +1,4 @@
-﻿# How to use formula(by ![](http://latex.codecogs.com/gif.latex?\\LaTeX))
+﻿# How to use formula(by ![](http://latex.codecogs.com/gif.latex?\\LaTeX)) in GitHub's Markdown 
 
 
 
