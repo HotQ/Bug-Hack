@@ -1,4 +1,4 @@
-﻿# Bug-Hack 151101
+﻿# How to use formula(by ![](http://latex.codecogs.com/gif.latex?\\LaTeX))
 
 
 
