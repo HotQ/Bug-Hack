@@ -16,6 +16,7 @@ if we use the way we always usd in Blog's editor
 ```
 ><img src="http://latex.codecogs.com/gif.latex?Fib(n)=\frac{ \left(\phi ^{n} -\gamma^{n} \right ) }{\sqrt{5}}" />
 ><img src="http://latex.codecogs.com/gif.latex?Fib(n)=\\frac{ \\left(\\phi ^{n} -\\gamma^{n} \\right ) }{\\sqrt{5}}" />
+
 ```
 ![](http://latex.codecogs.com/gif.latex?Fib(n)=\\frac{ \\left(\\phi ^{n} -\\gamma^{n} \\right ) }{\\sqrt{5}})
 ```
