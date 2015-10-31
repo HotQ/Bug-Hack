@@ -12,6 +12,7 @@ The result is not too good.
 
 
 
+---
 **If we use the way we always usd in Blog's editor,counting on latex.codecogs.com:**
 ```
 <img src="http://latex.codecogs.com/gif.latex?Fib(n)=\frac{ \left(\phi ^{n} -\gamma^{n} \right ) }{\sqrt{5}}" />
@@ -21,6 +22,7 @@ This result is also not satisfactory
 
 
 
+---
 **If we use this method:**
 ```
 ![](http://latex.codecogs.com/gif.latex?Fib(n)=\\frac{ \\left(\\phi ^{n} -\\gamma^{n} \\right ) }{\\sqrt{5}})
