@@ -1,0 +1,57 @@
+连着做了十几道算法/编程题，SICP里忽然蹦出了一道证明题，画风变化太快（有前辈说画风太迥异以至于不做这道题也不会影响后边），正好公选课听得太困，所以先睡了一节课...睡了一节课...一节课...
+
+<strong><span style="color: #ff0000;">练习1.13</span></strong>
+<strong>证明斐波那契数Fib(n)是最接近![](http://latex.codecogs.com/gif.latex? \\phi ^{n}/\\sqrt{5})的整数，其中![](http://latex.codecogs.com/gif.latex?\\phi =\\left ( 1+\\sqrt{5} \\right )/2) </strong>
+<strong> 提示，提示解题者利用归纳法和斐波那契数的定义证明![](http://latex.codecogs.com/gif.latex?Fib(n)=\\left(\\phi ^{n} -\\gamma^{n} \\right ) /\\sqrt{5})</strong>
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+刚翻到这道题有些棘手，不过根据提示做下去还是蛮简单的，要用到的“归纳法”充其量初高中数学的内容。
+这一章讲的是<strong>树形迭代</strong>，不知道作者是想让我们体会斐波那契数列树形迭代的时间复杂度还是单纯锻炼一下MIT Freshmen的计算能力.......
+
+思路咯，整理一下就是：
+<strong>1. 利用归纳法证明![](http://latex.codecogs.com/gif.latex?Fib(n)=\\frac{ \\left(\\phi ^{n} -\\gamma^{n} \\right ) }{\\sqrt{5}})</strong>
+<strong> 2. 说明![](http://latex.codecogs.com/gif.latex?\\gamma^{n}&lt;0.5)可以推到出Fib(n)是最接近![](http://latex.codecogs.com/gif.latex?\\frac{ \\phi ^{n} }{\\sqrt{5}})的整数</strong>
+具体步骤如下：
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<h1><span style="color: #333300;"><strong>归纳法证明</strong></span></h1>
+顺手的工作，由 n=1 时 Fib(n)=1 可以求得 ![](http://latex.codecogs.com/gif.latex?\\left(\\phi ^{n} -\\gamma^{n} \\right ) /\\sqrt{5}) 中 ![](http://latex.codecogs.com/gif.latex?\\gamma=\\frac{\\left ( 1-\\sqrt{5} \\right )}{2})
+
+&nbsp;
+
+最简单和常见的数学归纳法是证明当n等于任意一个自然数时某命题成立。证明分下面两步：
+<strong>1. 证明当<span style="background-color: #ccffff;"> n=1 </span>时命题成立。</strong>
+<strong> 2. 假设<span style="background-color: #ccffff;"> n=k </span>时命题成立，那么可以推导出在<span style="background-color: #ccffff;"> n=k+1 </span>时命题也成立。</strong>
+&nbsp;
+
+<span style="font-size: 20px;">我们可以看到归纳法常用于这样的问题：</span>
+
+一数列![](http://latex.codecogs.com/gif.latex?\\begin{Bmatrix}f_{n}\\end{Bmatrix}),其递推公式形如<span style="background-color: #ccffcc;">![](http://latex.codecogs.com/gif.latex?f\\left ( n \\right )=g\\left ( f\\left ( n-1 \\right ) \\right ))</span>，试证明![](http://latex.codecogs.com/gif.latex?F\\left (n \\right ))为数列![](http://latex.codecogs.com/gif.latex?\\begin{Bmatrix}f_{n}\\end{Bmatrix})的通项公式。
+
+&nbsp;
+
+而斐波那契数列的递推公式却是<span style="background-color: #ccffcc;">![](http://latex.codecogs.com/gif.latex?f\\left ( n \\right )=g\\left ( f\\left ( n-1 \\right ) , f\\left ( n-2\\right ) \\right ))</span>的形式：
+![](http://latex.codecogs.com/gif.latex?Fib(n)=\\left\\{\\begin{matrix}0 &amp; n=0 \\\\ 1 &amp; n=1 \\\\ Fib(n-1)+Fib(n-2) &amp; else \\end{matrix}\\right.)
+
+&nbsp;
+
+<span style="font-size: 20px;">因而我们所要使用的归纳法具体步骤则变为了这样:</span>
+<strong>1. 证明当<span style="background-color: #ccffff;"> n=0 </span>和<span style="background-color: #ccffff;"> n=1 </span>命题成立。</strong>
+<strong> 2. 假设<span style="background-color: #ccffff;"> n=k-1 </span>和<span style="background-color: #ccffff;"> n=k-2 </span>时命题成立，那么可以推导出在<span style="background-color: #ccffff;"> n=k </span>时命题也成立。</strong>
+那么我们按部就班的做下去，发现两步都能很easy的证明通项公式与否:
+![](http://latex.codecogs.com/gif.latex?\\because \\phi^{k-1}-\\gamma^{k-1}+\\phi^{k-2}-\\gamma ^{k-2}=\\phi^{k-2}\\left (1+\\phi\\right )-\\gamma ^{k-2}\\left (1+\\gamma\\right ))
+![](http://latex.codecogs.com/gif.latex?\\therefore Fib\\left ( k \\right )=\\phi^{k-2}\\left (1+\\phi\\right )-\\gamma ^{k-2}\\left(1+\\gamma\\right ))
+![](http://latex.codecogs.com/gif.latex?\\because \\left (1+\\phi\\right )=\\phi^{2}) 且 ![](http://latex.codecogs.com/gif.latex?\\left (1+\\gamma \\right )=\\gamma ^{2})
+![](http://latex.codecogs.com/gif.latex?\\therefore \\phi^{k-1}-\\gamma^{k-1}+\\phi^{k-2}-\\gamma ^{k-2}=\\phi^{k}-\\gamma ^{k})
+![](http://latex.codecogs.com/gif.latex?\\therefore Fib(n)=\\frac{ \\left(\\phi ^{n} -\\gamma^{n} \\right ) }{\\sqrt{5}})恒成立
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<h1><strong><span style="color: #333300;">收尾</span></strong></h1>
+上一步已经证明了![](http://latex.codecogs.com/gif.latex?Fib(n)=\\frac{ \\left(\\phi ^{n} -\\gamma^{n} \\right ) }{\\sqrt{5}})恒成立，而Fib(n)和![](http://latex.codecogs.com/gif.latex? \\phi ^{n}/\\sqrt{5})之间相差了![](http://latex.codecogs.com/gif.latex?\\gamma^{n}),易知![](http://latex.codecogs.com/gif.latex?\\left | \\frac{\\gamma^{n}}{\\sqrt{5}} \\right |)单调递减且恒小于0.5，所以结论已证。
